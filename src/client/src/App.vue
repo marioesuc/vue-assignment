@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Dashboard />
+    <Dashboard :data="data" />
   </div>
 </template>
 
@@ -14,15 +14,17 @@ export default {
   },
   data() {
     return {
-      time: 0,
-      energy: 0,
-      gps: {
-        latitude: 0,
-        longitude: 0
-      },
-      odo: 0,
-      speed: 0,
-      soc: 0,
+      data: {
+        time: 0,
+        energy: 0,
+        gps: {
+          latitude: 0,
+          longitude: 0
+        },
+        odo: 0,
+        speed: 0,
+        soc: 0,
+      }
     };
   },
   mounted() {
@@ -46,13 +48,13 @@ export default {
     onConnectToWebsocket (data) {
       const parsedData = JSON.parse(data);
       const parsedCoordinates = parsedData.gps.split('|');
-      this.time = parsedData.time;
-      this.energy = parsedData.energy;
-      this.gps.latitude = parsedCoordinates[0];
-      this.gps.longitude = parsedCoordinates[1];
-      this.odo = parsedData.odo;
-      this.speed = parsedData.speed;
-      this.soc = parsedData.soc;
+      this.data.time = parsedData.time;
+      this.data.energy = parsedData.energy;
+      this.data.gps.latitude = parseFloat(parsedCoordinates[0]);
+      this.data.gps.longitude = parseFloat(parsedCoordinates[1]);
+      this.data.odo = parsedData.odo;
+      this.data.speed = parsedData.speed;
+      this.data.soc = parsedData.soc;
     }
   }
 };

@@ -1,6 +1,9 @@
 <template>
-  <div class="container">
-    <Map />
+  <div id="dashboard">
+    <Map
+      :latitude="data.gps.latitude"
+      :longitude="data.gps.longitude"
+    />
   </div>
 </template>
 
@@ -12,18 +15,18 @@ export default {
   components: {
     Map,
   },
-  // props: {
-  //   msg: String
-  // }
+  props: {
+    data: Object
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.container {
+#dashboard {
   background-color: blue;
   flex: 1;
-  margin: 50px;
+  margin: 30px;
 }
 h3 {
   margin: 40px 0 0;
