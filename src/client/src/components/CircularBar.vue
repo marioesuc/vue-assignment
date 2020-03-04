@@ -28,47 +28,6 @@ export default {
     maxValue: Number,
     unit: String,
   },
-  data() {
-    return {
-      currentValueCurated: 0,
-    }
-  },
-  // data() {
-  //   return {
-  //     zoom: 15,
-  //     center: latLng(this.latitude, this.longitude),
-  //     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  //     attribution:
-  //       '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-  //     withPopup: latLng(this.latitude, this.longitude),
-  //     currentZoom: 11.5,
-  //     currentCenter: latLng(this.latitude, this.longitude),
-  //     mapOptions: {
-  //       zoomSnap: 0.5
-  //     },
-  //   };
-  // },
-  // watch: {
-  //   latitude() {
-  //     this.center = latLng(this.latitude, this.longitude)
-  //     this.withPopup = latLng(this.latitude, this.longitude)
-  //     this.currentCenter = latLng(this.latitude, this.longitude)
-  //   }
-  // },
-  // methods: {
-  //   zoomUpdate(zoom) {
-  //     this.currentZoom = zoom;
-  //   },
-  //   centerUpdate(center) {
-  //     this.currentCenter = center;
-  //   },
-  //   showLongText() {
-  //     this.showParagraph = !this.showParagraph;
-  //   },
-  //   innerClick() {
-  //     alert('Click!');
-  //   }
-  // }
 };
 </script>
 

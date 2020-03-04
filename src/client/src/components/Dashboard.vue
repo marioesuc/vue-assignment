@@ -16,12 +16,20 @@
         :unit="'%'"
       />
     </div>
+    <div class="row">
+      <LinearChart
+        :speed="data.speed"
+        :soc="data.soc"
+        :time="data.time"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import Map from "./Map";
 import CircularBar from "./CircularBar";
+import LinearChart from "./LinearChart";
 import { MAX_SPEED, MAX_CHARGE } from "@/common/Constants";
 
 export default {
@@ -29,6 +37,7 @@ export default {
   components: {
     Map,
     CircularBar,
+    LinearChart,
   },
   props: {
     data: Object
