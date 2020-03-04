@@ -53,7 +53,7 @@ export default {
       this.data.gps.latitude = parseFloat(parsedCoordinates[0]);
       this.data.gps.longitude = parseFloat(parsedCoordinates[1]);
       this.data.odo = parsedData.odo;
-      this.data.speed = parsedData.speed;
+      this.data.speed = parseInt(parsedData.speed) || 0;
       this.data.soc = parsedData.soc;
     }
   }

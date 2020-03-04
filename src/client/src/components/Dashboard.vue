@@ -1,22 +1,43 @@
 <template>
   <div id="dashboard">
-    <Map
-      :latitude="data.gps.latitude"
-      :longitude="data.gps.longitude"
-    />
+    <div class="row">
+      <Map
+        :latitude="data.gps.latitude"
+        :longitude="data.gps.longitude"
+      />
+      <CircularBar
+        :currentValue="data.speed"
+        :maxValue="maxSpeed"
+        :unit="'km/h'"
+      />
+      <CircularBar
+        :currentValue="data.soc"
+        :maxValue="maxCharge"
+        :unit="'%'"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import Map from "./Map";
+import CircularBar from "./CircularBar";
+import { MAX_SPEED, MAX_CHARGE } from "@/common/Constants";
 
 export default {
   name: "Dashboard",
   components: {
     Map,
+    CircularBar,
   },
   props: {
     data: Object
+  },
+  data() {
+    return {
+      maxSpeed: MAX_SPEED,
+      maxCharge: MAX_CHARGE
+    }
   },
 };
 </script>
@@ -27,6 +48,10 @@ export default {
   background-color: blue;
   flex: 1;
   margin: 30px;
+}
+.row {
+  display: flex;
+  flex-direction: 'row';
 }
 h3 {
   margin: 40px 0 0;
