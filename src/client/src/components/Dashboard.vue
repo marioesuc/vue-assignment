@@ -54,7 +54,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #dashboard {
-  background-color: blue;
+  background-color: white;
   flex: 1;
   margin: 30px;
 }

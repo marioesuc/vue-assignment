@@ -7,20 +7,14 @@
 <script>
 import Chart from "chart.js";
 
+const MAX_VALUES_NUMBER_X = 60;
+const REFRESH_RATE_MS = 250;
+
 export default {
   props: {
-    soc: {
-      type: Number,
-      default: 0
-    },
-    speed: {
-      type: Number,
-      default: 0
-    },
-    time: {
-      type: Number,
-      default: 1511437255000
-    },
+    soc: Number,
+    speed: Number,
+    time:  Number,
   },
   name: "LinearChart",
   data() {
@@ -33,27 +27,44 @@ export default {
     this.startInterval();
   },
   methods: {
+    secondsDiff: function (d1, d2) {
+  
+      let secDiff = Math.floor( ( d2 - d1) / 1000 );
+      return secDiff;
+    },
     startInterval: function () {
       setInterval(() => {                        
         const dataArray = this.chart.data.datasets[0].data;
         const lengthArray = dataArray.length;
+  
         this.chart.data.datasets[0].data.push({
-        x: this.time,
-        y: this.soc
-      });
+          x: this.time,
+          y: this.soc
+        });
 
-      this.chart.data.datasets[1].data.push({
-        x: this.time,
-        y: this.speed
-      });
+        this.chart.data.datasets[1].data.push({
+          x: this.time,
+          y: this.speed
+        });
 
-      if (lengthArray > 30) {
-        this.chart.data.datasets[0].data.shift();
-        this.chart.data.datasets[1].data.shift();
-      }
+        if (lengthArray > MAX_VALUES_NUMBER_X) {
+          this.chart.data.datasets[0].data.shift();
+          this.chart.data.datasets[1].data.shift();
+        }
 
-      this.chart.update();
-      }, 500);
+        if(lengthArray > 2) {
+          const lastDate = new Date(dataArray[lengthArray - 1].x);
+          const previousDate = new Date(dataArray[lengthArray - 2].x);
+          const diffDatesMs = lastDate - previousDate;
+    
+          if (diffDatesMs < 0) {
+            this.chart.data.datasets[0].data = [];
+            this.chart.data.datasets[1].data = [];
+          }
+        }
+
+        this.chart.update();
+      }, REFRESH_RATE_MS);
     },
     createChart: function() {
       const ctx = document.getElementById("chart");

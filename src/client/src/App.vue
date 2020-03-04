@@ -48,7 +48,7 @@ export default {
     onConnectToWebsocket (data) {
       const parsedData = JSON.parse(data);
       const parsedCoordinates = parsedData.gps.split('|');
-      this.data.time = parsedData.time;
+      this.data.time = parseInt(parsedData.time);
       this.data.energy = parsedData.energy;
       this.data.gps.latitude = parseFloat(parsedCoordinates[0]);
       this.data.gps.longitude = parseFloat(parsedCoordinates[1]);
