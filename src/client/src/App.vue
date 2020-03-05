@@ -64,13 +64,10 @@ export default {
 html,
 body,
 #app {
-  height: 100%;
-  margin: 0;
-}
-
-#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  background-color: gray;
-  display: flex;
+  background: #7ca363;
+  background: linear-gradient(0deg, rgba(124,163,99,1) 0%, rgba(160,228,116,1));
+  background-attachment: fixed;
+  height: 100vh;
 }
 </style>

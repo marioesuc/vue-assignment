@@ -114,7 +114,9 @@ export default {
 
 <style>
 #linearchart {
-  width: 70%;
+  margin: 50px;
+  width: 80%;
+  height: 500px;
 }
 #chart {
   background-color: white;

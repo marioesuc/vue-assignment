@@ -1,6 +1,9 @@
 <template>
   <div id="map">
+    <div id="mapShadow">
+    </div>
     <l-map
+      id="mapLayer"
       :zoom="zoom"
       :center="center"
       :options="mapOptions"
@@ -83,8 +86,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #map {
+  position: relative;
   width: 800px;
-  height: 400px;
+  flex: 1;
   border: 3px solid white;
+}
+#mapLayer {
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+#mapShadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
+  z-index: 999;
 }
 </style>

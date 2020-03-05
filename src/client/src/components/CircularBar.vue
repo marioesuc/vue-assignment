@@ -34,8 +34,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #circularbar {
-  margin: 20px;
-  width: 300px;
+  margin: 50px 20px;
+  width: 250px;
   height: 200px;
   text-align: center;
 }

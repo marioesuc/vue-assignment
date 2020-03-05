@@ -5,16 +5,38 @@
         :latitude="data.gps.latitude"
         :longitude="data.gps.longitude"
       />
-      <CircularBar
-        :currentValue="data.speed"
-        :maxValue="maxSpeed"
-        :unit="'km/h'"
-      />
-      <CircularBar
-        :currentValue="data.soc"
-        :maxValue="maxCharge"
-        :unit="'%'"
-      />
+      <div class="column">
+        <div class="row">
+          <div class="column">
+          <CircularBar
+            :currentValue="data.speed"
+            :maxValue="maxSpeed"
+            :unit="'km/h'"
+          />
+          </div>
+          <div class="column">
+          <CircularBar
+            :currentValue="data.soc"
+            :maxValue="maxCharge"
+            :unit="'%'"
+          />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+          <LargeLabel
+            :currentValue="data.energy"
+            :unit="'kW'"
+          />
+          </div>
+          <div class="column">
+            <LargeLabel
+              :currentValue="data.odo"
+              :unit="'km'"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row">
       <LinearChart
@@ -30,6 +52,7 @@
 import Map from "./Map";
 import CircularBar from "./CircularBar";
 import LinearChart from "./LinearChart";
+import LargeLabel from "./LargeLabel";
 import { MAX_SPEED, MAX_CHARGE } from "@/common/Constants";
 
 export default {
@@ -38,6 +61,7 @@ export default {
     Map,
     CircularBar,
     LinearChart,
+    LargeLabel,
   },
   props: {
     data: Object
@@ -54,13 +78,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #dashboard {
+  width: 1350px;
   background-color: white;
-  flex: 1;
-  margin: 30px;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
 }
 .row {
   display: flex;
-  flex-direction: 'row';
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 h3 {
   margin: 40px 0 0;
