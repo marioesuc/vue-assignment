@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <Header />
     <Dashboard :data="data" />
   </div>
 </template>
 
 <script>
 import Dashboard from './components/Dashboard.vue';
+import Header from './components/Header.vue';
 
 export default {
   name: 'App',
   components: {
-    Dashboard
+    Dashboard,
+    Header,
   },
   data() {
     return {
@@ -49,10 +52,10 @@ export default {
       const parsedData = JSON.parse(data);
       const parsedCoordinates = parsedData.gps.split('|');
       this.data.time = parseInt(parsedData.time);
-      this.data.energy = parsedData.energy;
+      this.data.energy = parseFloat(parsedData.energy);
       this.data.gps.latitude = parseFloat(parsedCoordinates[0]);
       this.data.gps.longitude = parseFloat(parsedCoordinates[1]);
-      this.data.odo = parsedData.odo;
+      this.data.odo = parseFloat(parsedData.odo);
       this.data.speed = parseInt(parsedData.speed) || 0;
       this.data.soc = parsedData.soc;
     }
@@ -69,5 +72,6 @@ body,
   background: linear-gradient(0deg, rgba(124,163,99,1) 0%, rgba(160,228,116,1));
   background-attachment: fixed;
   height: 100vh;
+  margin: 0;
 }
 </style>

@@ -24,7 +24,7 @@ export default {
   margin: 50px 20px;
   width: 230px;
   height: 60px;
-  background-color: rgba($color: green, $alpha: 0.6);
+  background-color: rgba($color: #A8A60F, $alpha: 0.6);
   border-radius: 15px;
 }
 #currentValue {
