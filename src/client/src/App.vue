@@ -69,7 +69,7 @@ body,
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   background: #7ca363;
-  background: linear-gradient(0deg, rgba(124,163,99,1) 0%, rgba(160,228,116,1));
+  background: linear-gradient(0deg, rgba(124,163,99,1) 0%, rgba(160,228,116,1) 100%);
   background-attachment: fixed;
   height: 100vh;
   margin: 0;
