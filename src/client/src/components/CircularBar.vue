@@ -1,6 +1,7 @@
 <template>
   <div id="circularbar">
     <span id="currentValue">{{`${currentValue} ${unit}`}}</span>
+    <span id="title">{{`${title}`}}</span>
     <VueSvgGauge
       :start-angle="-110"
       :end-angle="110"
@@ -24,6 +25,7 @@ export default {
     VueSvgGauge,
   },
   props: {
+    title: String,
     currentValue: Number,
     maxValue: Number,
     unit: String,
@@ -34,18 +36,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #circularbar {
-  margin: 50px 20px;
+  margin: 0 20px 50px;
   width: 250px;
   height: 200px;
   text-align: center;
 }
 #currentValue {
   position: relative;
-  top: 160px;
-  color: green;
+  top: 195px;
+  color: #7ca363;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   margin: 0 auto;
+}
+#title {
+  display: flex;
+  justify-content: center;
+  color: rgba($color: #ADA60F, $alpha: 0.4);
+  font-size: 30px;
+  font-weight: bold;
 }
 </style>

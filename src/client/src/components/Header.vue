@@ -1,6 +1,7 @@
 <template>
   <div id="header">
     <img id="image" src="../assets/logo.png" />
+    <div id="separator"></div>
     <span id="headerText">Dashboard</span>
   </div>
 </template>
@@ -18,14 +19,18 @@
 }
 #image {
   width: 220px;
-  padding: 5px;
+  padding: 15px;
+}
+#separator {
+  height: 50px;
+  width: 1px;
+  background-color: rgb(196, 196, 196);
 }
 #headerText {
   color: #BEBC46;
   font-size: 35px;
   font-weight: bold;
   text-align: center;
-  width: 200px;
-  padding: 5px;
+  padding: 10px;
 }
 </style>

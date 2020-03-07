@@ -9,6 +9,7 @@
         <div class="row">
           <div class="column">
           <CircularBar
+            :title="titles.speed"
             :currentValue="data.speed"
             :maxValue="maxSpeed"
             :unit="'km/h'"
@@ -16,6 +17,7 @@
           </div>
           <div class="column">
           <CircularBar
+            :title="titles.soc"
             :currentValue="data.soc"
             :maxValue="maxCharge"
             :unit="'%'"
@@ -25,12 +27,14 @@
         <div class="row">
           <div class="column">
           <LargeLabel
+            :title="titles.energy"
             :currentValue="data.energy"
             :unit="'kW'"
           />
           </div>
           <div class="column">
             <LargeLabel
+              :title="titles.odo"
               :currentValue="data.odo"
               :unit="'km'"
             />
@@ -69,7 +73,13 @@ export default {
   data() {
     return {
       maxSpeed: MAX_SPEED,
-      maxCharge: MAX_CHARGE
+      maxCharge: MAX_CHARGE,
+      titles: {
+        speed: "speed",
+        soc: "state of charge",
+        energy: "energy",
+        odo: "odometer",
+      }
     }
   },
 };

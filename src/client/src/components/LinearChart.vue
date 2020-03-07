@@ -63,6 +63,8 @@ export default {
           }
         }
 
+        console.log(this.chart.data.datasets[0].data)
+
         this.chart.update();
       }, REFRESH_RATE_MS);
     },
