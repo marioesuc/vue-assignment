@@ -1,10 +1,12 @@
 <template>
   <div id="dashboard">
     <div class="row">
-      <Map
-        :latitude="data.gps.latitude"
-        :longitude="data.gps.longitude"
-      />
+      <div class="column">
+        <Map
+          :latitude="data.gps.latitude"
+          :longitude="data.gps.longitude"
+        />
+      </div>
       <div class="column">
         <div class="row">
           <div class="column">
@@ -175,14 +177,21 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped>
 #dashboard {
-  width: 1350px;
+  width: 80vw;
   background-color: white;
   margin: 30px auto;
   padding: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
 }
+
+@media only screen and (max-width: 800px) {
+  #dashboard {
+    width: 90vw;
+  }
+}
+
 .row {
   display: flex;
   flex-direction: row;

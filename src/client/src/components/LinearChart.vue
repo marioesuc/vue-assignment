@@ -52,9 +52,17 @@ export default {
 #linearchart {
   margin: 50px;
   width: 80%;
-  height: 500px;
+  max-height: 500px;
 }
 #chart {
   background-color: white;
+  max-height: 500px;
+}
+
+@media only screen and (max-width: 800px) {
+  #linearchart {
+    margin: 0;
+    width: 100%;
+  }
 }
 </style>

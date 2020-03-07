@@ -21,7 +21,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped>
 #header {
   width: 100%;
   background-color: white;
@@ -47,5 +47,27 @@ export default {
   font-weight: bold;
   text-align: center;
   padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  #header {
+    height: 75px;
+  }
+  #image {
+  width: 180px;
+  padding: 15px;
+  }
+  #separator {
+    height: 50px;
+    width: 1px;
+    background-color: rgb(196, 196, 196);
+  }
+  #headerText {
+    color: #BEBC46;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
 }
 </style>

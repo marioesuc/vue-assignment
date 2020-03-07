@@ -1,7 +1,6 @@
 <template>
   <div id="map">
-    <div id="mapShadow">
-    </div>
+    <div id="mapShadow"></div>
     <l-map
       id="mapLayer"
       :zoom="zoom"
@@ -9,8 +8,7 @@
       :options="mapOptions"
     >
       <l-tile-layer :url="url" :attribution="attribution" />
-      <l-marker :lat-lng="currentCenter">
-      </l-marker>
+      <l-marker :lat-lng="currentCenter"></l-marker>
     </l-map>
   </div>
 </template>
@@ -54,23 +52,38 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped>
 #map {
   position: relative;
-  width: 800px;
+  width: 100%;
   flex: 1;
-  border: 3px solid white;
+  min-width: 400px;
+  
 }
 #mapLayer {
   border-radius: 15px;
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
+  height: 50%;
+  min-height: 450px;
 }
+
 #mapShadow {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 50%;
   border-radius: 15px;
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
   z-index: 999;
+  min-height: 450px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #mapLayer {
+    min-height: 250px;
+  }
+
+  #mapShadow {
+    min-height: 250px;
+  }
 }
 </style>
