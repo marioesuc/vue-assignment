@@ -106,8 +106,11 @@ export default {
                 type: "time",
               }
             ]
+          },
+          tooltips: {
+            enabled: false,
           }
-        }
+        },
       });
     }
   }
