@@ -8,13 +8,13 @@
     >
       <div id="mapShadow"></div>
       <l-tile-layer :url="url" :attribution="attribution" />
-      <l-marker :lat-lng="currentCenter"></l-marker>
+      <l-marker :lat-lng="currentCenter" :icon="icon"></l-marker>
     </l-map>
   </div>
 </template>
 
 <script>
-import { latLng } from "leaflet";
+import { latLng, icon } from "leaflet";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 
 export default {
@@ -40,6 +40,11 @@ export default {
       mapOptions: {
         zoomSnap: 0.5
       },
+      icon: icon({
+        iconUrl: require('@/assets/bus_icon.png'),
+        iconSize: [44, 44],
+        iconAnchor: [22, 44]
+      }),
     };
   },
   watch: {
