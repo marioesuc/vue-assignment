@@ -49,6 +49,7 @@ export default {
   },
   watch: {
     latitude() {
+      // Everytime we get a new gps location, update the coordinates to indicate the center of the map
       this.center = latLng(this.latitude, this.longitude)
       this.currentCenter = latLng(this.latitude, this.longitude)
     }
@@ -63,7 +64,6 @@ export default {
   width: 100%;
   flex: 1;
   min-width: 400px;
-  
 }
 #mapLayer {
   border-radius: 15px;
@@ -71,7 +71,6 @@ export default {
   height: 50%;
   min-height: 450px;
 }
-
 #mapShadow {
   position: absolute;
   width: 100%;
@@ -86,11 +85,9 @@ export default {
   #map {
     flex: none;
   }
-
   #mapLayer {
     min-height: 250px;
   }
-
   #mapShadow {
     min-height: 250px;
   }

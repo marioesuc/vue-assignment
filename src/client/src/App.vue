@@ -32,6 +32,7 @@ export default {
     };
   },
   mounted() {
+    // Perform connection to WebSocket
     const url = 'ws://localhost:3000';
     this.connectToWebsocket(url, this.onConnectToWebsocket);
   },
@@ -50,8 +51,11 @@ export default {
       };
     },
     onConnectToWebsocket (data) {
+      // Parse the data sent by the WebSocket
       const parsedData = JSON.parse(data);
+      // Split the string of coordinates in an array of two elements
       const parsedCoordinates = parsedData.gps.split('|');
+      // Save into variables all the data
       this.data.time = parseInt(parsedData.time);
       this.data.energy = parseFloat(parsedData.energy);
       this.data.gps.latitude = parseFloat(parsedCoordinates[0]);
