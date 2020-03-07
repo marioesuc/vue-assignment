@@ -1,10 +1,25 @@
 <template>
   <div id="header">
-    <img id="image" src="../assets/logo.png" />
+    <img id="image" :src="logo" />
     <div id="separator"></div>
-    <span id="headerText">Dashboard</span>
+    <span id="headerText">{{title}}</span>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: String,
+    logoSrc: String,
+  },
+  data() {
+    return {
+      logo: require('@/assets/logo.png'),
+    }
+  },
+}
+</script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #header {

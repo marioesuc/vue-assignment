@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header title="Dashboard" logoSrc="@/assets/logo.png"/>
     <Dashboard :data="data" />
   </div>
 </template>
