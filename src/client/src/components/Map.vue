@@ -1,12 +1,12 @@
 <template>
   <div id="map">
-    <div id="mapShadow"></div>
     <l-map
       id="mapLayer"
       :zoom="zoom"
       :center="center"
       :options="mapOptions"
     >
+      <div id="mapShadow"></div>
       <l-tile-layer :url="url" :attribution="attribution" />
       <l-marker :lat-lng="currentCenter"></l-marker>
     </l-map>
