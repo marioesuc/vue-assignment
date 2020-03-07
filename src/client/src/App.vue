@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header title="Dashboard" logoSrc="@/assets/logo.png"/>
+    <Header title="Dashboard" :logoSrc="logoSrc"/>
     <Dashboard :data="data" />
   </div>
 </template>
@@ -27,7 +27,8 @@ export default {
         odo: 0,
         speed: 0,
         soc: 0,
-      }
+      },
+      logoSrc: require('@/assets/logo.png'),
     };
   },
   mounted() {

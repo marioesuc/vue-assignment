@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <img id="image" :src="logo" />
+    <img id="image" :src="logoSrc" />
     <div id="separator"></div>
     <span id="headerText">{{title}}</span>
   </div>
@@ -11,11 +11,6 @@ export default {
   props: {
     title: String,
     logoSrc: String,
-  },
-  data() {
-    return {
-      logo: require('@/assets/logo.png'),
-    }
   },
 }
 </script>
