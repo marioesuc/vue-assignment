@@ -12,28 +12,28 @@ export default {
     data: Object,
     options: Object,
     intervalEnabled: Boolean,
-    refreshRate: Number,
+    refreshRate: Number
   },
   name: "LinearChart",
   data() {
     return {
-      chart: null,
+      chart: null
     };
   },
   mounted() {
     this.createChart();
     if (this.intervalEnabled) {
-        this.startInterval();
+      this.startInterval();
     }
   },
   methods: {
-    startInterval: function () {
-      setInterval(() => {     
+    startInterval: function() {
+      setInterval(() => {
         // Emit event to be caught at the parent to trigger a function
-        this.$emit('updateChart');                   
+        this.$emit("updateChart");
 
         // Update the chart to see the changes
-      this.chart.update();
+        this.chart.update();
       }, this.refreshRate);
     },
     createChart: function() {
@@ -41,7 +41,7 @@ export default {
       this.chart = new Chart(ctx, {
         type: "line",
         data: this.data,
-        options: this.options,
+        options: this.options
       });
     }
   }

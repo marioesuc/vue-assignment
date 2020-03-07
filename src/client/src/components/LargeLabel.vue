@@ -1,21 +1,21 @@
 <template>
   <div id="largelabel">
-    <span id="title">{{`${title}`}}</span>
+    <span id="title">{{ `${title}` }}</span>
     <div id="labelValue">
-      <span id="currentValue">{{`${currentValue} ${unit}`}}</span>
+      <span id="currentValue">{{ `${currentValue} ${unit}` }}</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LargeLabel',
+  name: "LargeLabel",
   props: {
     title: String,
     currentValue: Number,
     maxValue: Number,
-    unit: String,
-  },
+    unit: String
+  }
 };
 </script>
 
@@ -36,7 +36,7 @@ export default {
 #title {
   display: flex;
   justify-content: center;
-  color: rgba($color: #ADA60F, $alpha: 0.4);
+  color: rgba($color: #ada60f, $alpha: 0.4);
   font-size: 30px;
   font-weight: bold;
   margin: 0 0 12px;
@@ -46,6 +46,6 @@ export default {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-   margin: 0 auto;
+  margin: 0 auto;
 }
 </style>

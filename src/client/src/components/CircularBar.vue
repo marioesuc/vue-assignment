@@ -1,7 +1,7 @@
 <template>
   <div id="circularbar">
-    <span id="currentValue">{{`${currentValue} ${unit}`}}</span>
-    <span id="title">{{`${title}`}}</span>
+    <span id="currentValue">{{ `${currentValue} ${unit}` }}</span>
+    <span id="title">{{ `${title}` }}</span>
     <VueSvgGauge
       :start-angle="-110"
       :end-angle="110"
@@ -9,7 +9,10 @@
       :separator-step="0"
       :min="0"
       :max="maxValue"
-      :gauge-color="[{ offset: 0, color: '#347AB0'}, { offset: 100, color: '#8CDFAD'}]"
+      :gauge-color="[
+        { offset: 0, color: '#347AB0' },
+        { offset: 100, color: '#8CDFAD' }
+      ]"
       :scale-interval="0.1"
       :transition-duration="0"
     />
@@ -17,19 +20,19 @@
 </template>
 
 <script>
-import { VueSvgGauge } from 'vue-svg-gauge'
+import { VueSvgGauge } from "vue-svg-gauge";
 
 export default {
-  name: 'CircularBar',
+  name: "CircularBar",
   components: {
-    VueSvgGauge,
+    VueSvgGauge
   },
   props: {
     title: String,
     currentValue: Number,
     maxValue: Number,
-    unit: String,
-  },
+    unit: String
+  }
 };
 </script>
 
@@ -53,7 +56,7 @@ export default {
 #title {
   display: flex;
   justify-content: center;
-  color: rgba($color: #ADA60F, $alpha: 0.4);
+  color: rgba($color: #ada60f, $alpha: 0.4);
   font-size: 30px;
   font-weight: bold;
 }

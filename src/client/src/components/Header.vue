@@ -2,7 +2,7 @@
   <div id="header">
     <img id="image" :src="logoSrc" />
     <div id="separator"></div>
-    <span id="headerText">{{title}}</span>
+    <span id="headerText">{{ title }}</span>
   </div>
 </template>
 
@@ -10,9 +10,9 @@
 export default {
   props: {
     title: String,
-    logoSrc: String,
-  },
-}
+    logoSrc: String
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -20,7 +20,7 @@ export default {
 #header {
   width: 100%;
   background-color: white;
-  box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
   height: 90px;
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@ export default {
   background-color: rgb(196, 196, 196);
 }
 #headerText {
-  color: #BEBC46;
+  color: #bebc46;
   font-size: 35px;
   font-weight: bold;
   text-align: center;
@@ -49,8 +49,8 @@ export default {
     height: 75px;
   }
   #image {
-  width: 180px;
-  padding: 15px;
+    width: 180px;
+    padding: 15px;
   }
   #separator {
     height: 50px;
@@ -58,7 +58,7 @@ export default {
     background-color: rgb(196, 196, 196);
   }
   #headerText {
-    color: #BEBC46;
+    color: #bebc46;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
