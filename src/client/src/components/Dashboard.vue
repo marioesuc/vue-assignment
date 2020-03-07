@@ -2,37 +2,34 @@
   <div id="dashboard">
     <div class="row">
       <div class="column">
-        <Map
-          :latitude="data.gps.latitude"
-          :longitude="data.gps.longitude"
-        />
+        <Map :latitude="data.gps.latitude" :longitude="data.gps.longitude" />
       </div>
       <div class="column">
         <div class="row">
           <div class="column">
-          <CircularBar
-            :title="titles.speed"
-            :currentValue="data.speed"
-            :maxValue="maxSpeed"
-            :unit="'km/h'"
-          />
+            <CircularBar
+              :title="titles.speed"
+              :currentValue="data.speed"
+              :maxValue="maxSpeed"
+              :unit="'km/h'"
+            />
           </div>
           <div class="column">
-          <CircularBar
-            :title="titles.soc"
-            :currentValue="data.soc"
-            :maxValue="maxCharge"
-            :unit="'%'"
-          />
+            <CircularBar
+              :title="titles.soc"
+              :currentValue="data.soc"
+              :maxValue="maxCharge"
+              :unit="'%'"
+            />
           </div>
         </div>
         <div class="row">
           <div class="column">
-          <LargeLabel
-            :title="titles.energy"
-            :currentValue="data.energy"
-            :unit="'kW'"
-          />
+            <LargeLabel
+              :title="titles.energy"
+              :currentValue="data.energy"
+              :unit="'kW'"
+            />
           </div>
           <div class="column">
             <LargeLabel
@@ -61,7 +58,12 @@ import Map from "./Map";
 import CircularBar from "./CircularBar";
 import LinearChart from "./LinearChart";
 import LargeLabel from "./LargeLabel";
-import { MAX_SPEED, MAX_CHARGE, MAX_VALUES_NUMBER_X, REFRESH_RATE_MS } from "@/common/Constants";
+import {
+  MAX_SPEED,
+  MAX_CHARGE,
+  MAX_VALUES_NUMBER_X,
+  REFRESH_RATE_MS
+} from "@/common/Constants";
 
 export default {
   name: "Dashboard",
@@ -69,7 +71,7 @@ export default {
     Map,
     CircularBar,
     LinearChart,
-    LargeLabel,
+    LargeLabel
   },
   props: {
     data: Object
@@ -82,7 +84,7 @@ export default {
         speed: "speed",
         soc: "state of charge",
         energy: "energy",
-        odo: "odometer",
+        odo: "odometer"
       },
       linearChart: {
         data: {
@@ -91,7 +93,7 @@ export default {
               label: "State of charge (%)",
               backgroundColor: "transparent",
               borderColor: "#008dd2",
-              data: [],
+              data: []
             },
             {
               label: "Speed (km/h)",
@@ -106,7 +108,7 @@ export default {
             yAxes: [
               {
                 ticks: {
-                  fontSize: 16,
+                  fontSize: 16
                 }
               }
             ],
@@ -114,19 +116,19 @@ export default {
               {
                 ticks: {
                   fontSize: 16,
-                  maxTicksLimit: 10,
+                  maxTicksLimit: 10
                 },
-                type: "time",
+                type: "time"
               }
             ]
           },
           tooltips: {
-            enabled: false,
+            enabled: false
           }
         },
-        refreshRate: REFRESH_RATE_MS,
+        refreshRate: REFRESH_RATE_MS
       }
-    }
+    };
   },
   methods: {
     updateLinearChart() {
@@ -137,17 +139,17 @@ export default {
 
       // Push elemens to the soc data array if time prop is filled
       time &&
-      datasets[0].data.push({
-        x: time,
-        y: soc
-      });
+        datasets[0].data.push({
+          x: time,
+          y: soc
+        });
 
       // Push elements to the speed data array if time prop is filled
       time &&
-      datasets[1].data.push({
-        x: time,
-        y: speed
-      });
+        datasets[1].data.push({
+          x: time,
+          y: speed
+        });
 
       // If the array has been filled with the max number of elements
       // take out the first element and shift it
@@ -162,16 +164,17 @@ export default {
         const lastElementArray = socDataArray[lengthArray - 1];
         const secondToLastElementArray = socDataArray[lengthArray - 2];
         const lastDate = lastElementArray && new Date(lastElementArray.x);
-        const previousDate = lastElementArray && new Date(secondToLastElementArray.x);
+        const previousDate =
+          lastElementArray && new Date(secondToLastElementArray.x);
         const diffDatesMs = lastDate - previousDate;
-  
+
         // If times are not consecutive, empty the arrays
         if (diffDatesMs < 0) {
           datasets[0].data = [];
           datasets[1].data = [];
         }
       }
-    },
+    }
   }
 };
 </script>
@@ -179,14 +182,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #dashboard {
-  width: 80vw;
+  width: 1300px;
   background-color: white;
   margin: 30px auto;
   padding: 20px;
-  box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1350px) {
   #dashboard {
     width: 90vw;
   }
