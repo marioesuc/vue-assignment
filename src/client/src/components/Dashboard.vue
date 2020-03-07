@@ -161,8 +161,8 @@ export default {
       if (lengthArray > 2) {
         const lastElementArray = socDataArray[lengthArray - 1];
         const secondToLastElementArray = socDataArray[lengthArray - 2];
-        const lastDate = new Date(lastElementArray.x);
-        const previousDate = new Date(secondToLastElementArray.x);
+        const lastDate = lastElementArray && new Date(lastElementArray.x);
+        const previousDate = lastElementArray && new Date(secondToLastElementArray.x);
         const diffDatesMs = lastDate - previousDate;
   
         // If times are not consecutive, empty the arrays
