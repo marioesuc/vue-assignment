@@ -74,16 +74,20 @@ export default {
       }, REFRESH_RATE_MS);
     },
     updateChart() {
-      const dataArray = this.chart.data.datasets[0].data;
-      const lengthArray = dataArray.length;
+      const { datasets } = this.chart.data;
+      const socDataArray = datasets[0].data;
+      const lengthArray = socDataArray.length;
 
-      // Push elemens to the array
-      this.chart.data.datasets[0].data.push({
+      // Push elemens to the soc data array if time prop is filled
+      this.time &&
+      datasets[0].data.push({
         x: this.time,
         y: this.soc
       });
 
-      this.chart.data.datasets[1].data.push({
+      // Push elements to the speed data array if time prop is filled
+      this.time &&
+      datasets[1].data.push({
         x: this.time,
         y: this.speed
       });
@@ -91,21 +95,21 @@ export default {
       // If the array has been filled with the max number of elements
       // take out the first element and shift it
       if (lengthArray > MAX_VALUES_NUMBER_X) {
-        this.chart.data.datasets[0].data.shift();
-        this.chart.data.datasets[1].data.shift();
+        datasets[0].data.shift();
+        datasets[1].data.shift();
       }
 
       // If the array contains more than 2 elements and the times are not consecutive
       // restarts the data (so that it doesn't draw strange lines)
       if (lengthArray > 2) {
-        const lastDate = new Date(dataArray[lengthArray - 1].x);
-        const previousDate = new Date(dataArray[lengthArray - 2].x);
+        const lastDate = new Date(socDataArray[lengthArray - 1].x);
+        const previousDate = new Date(socDataArray[lengthArray - 2].x);
         const diffDatesMs = lastDate - previousDate;
   
         // If times are not consecutive, empty the arrays
         if (diffDatesMs < 0) {
-          this.chart.data.datasets[0].data = [];
-          this.chart.data.datasets[1].data = [];
+          datasets[0].data = [];
+          datasets[1].data = [];
         }
       }
 
