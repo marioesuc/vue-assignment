@@ -78,6 +78,10 @@ export default {
 }
 
 @media only screen and (max-width: 1000px) {
+  #map {
+    flex: none;
+  }
+
   #mapLayer {
     min-height: 250px;
   }
