@@ -16,10 +16,12 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
+@import "@/common/Colors";
+
 #header {
   width: 100%;
-  background-color: white;
+  background-color: $header-background;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
   height: 90px;
   display: flex;
@@ -34,10 +36,10 @@ export default {
 #separator {
   height: 50px;
   width: 1px;
-  background-color: rgb(196, 196, 196);
+  background-color: $header-separator;
 }
 #headerText {
-  color: #bebc46;
+  color: $header-text;
   font-size: 35px;
   font-weight: bold;
   text-align: center;
@@ -50,19 +52,12 @@ export default {
   }
   #image {
     width: 180px;
-    padding: 15px;
   }
   #separator {
     height: 50px;
-    width: 1px;
-    background-color: rgb(196, 196, 196);
   }
   #headerText {
-    color: #bebc46;
     font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
   }
 }
 </style>

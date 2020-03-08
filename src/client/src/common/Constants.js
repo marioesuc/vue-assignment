@@ -1,3 +1,5 @@
+// GLOBAL CONSTANTS FILE
+
 export const MAX_SPEED = 100;
 export const MAX_ALLOWED_SPEED = 50;
 export const MAX_CHARGE = 100;

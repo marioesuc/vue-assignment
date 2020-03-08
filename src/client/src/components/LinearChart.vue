@@ -48,14 +48,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "@/common/Colors";
+
 #linearchart {
   margin: 50px;
   width: 80%;
   max-height: 500px;
 }
 #chart {
-  background-color: white;
+  background-color: $linearchart-background;
   max-height: 500px;
 }
 

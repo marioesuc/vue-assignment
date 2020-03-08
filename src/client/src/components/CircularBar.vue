@@ -52,6 +52,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/common/Colors";
+
 #circularbar {
   margin: 0 20px 50px;
   width: 250px;
@@ -67,17 +69,17 @@ export default {
   margin: 0 auto;
 }
 .thresholdNotExceeded {
-  color: #7ca363;
+  color: $circularbar-value;
   transition: 0.5s;
 }
 .thresholdExceeded {
-  color: #b84b4b;
+  color: $circularbar-threshold-exceeded;
   transition: 0.5s;
 }
 #title {
   display: flex;
   justify-content: center;
-  color: rgba($color: #ada60f, $alpha: 0.4);
+  color: $circularbar-title;
   font-size: 30px;
   font-weight: bold;
 }

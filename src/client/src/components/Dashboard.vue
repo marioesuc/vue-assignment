@@ -188,10 +188,12 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
+@import "@/common/Colors";
+
 #dashboard {
   width: 1300px;
-  background-color: white;
+  background-color: $dashboard-background;
   margin: 30px auto;
   padding: 20px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);

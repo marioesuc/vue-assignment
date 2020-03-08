@@ -1,0 +1,39 @@
+// GLOBAL COLORS FILE
+
+// App
+$app-background: #7ca363;
+$app-gradient-background: linear-gradient(
+  0deg,
+  rgba(124, 163, 99, 1) 0%,
+  rgba(160, 228, 116, 1) 100%
+);
+
+// Header
+$header-background: white;
+$header-text: #bebc46;
+$header-separator: rgb(196, 196, 196);
+
+// Dashboard
+$dashboard-background: white;
+
+// Circular Bar
+$circularbar-title: rgba(
+  $color: #ada60f,
+  $alpha: 0.4
+);
+$circularbar-value: #7ca363;
+$circularbar-threshold-exceeded: #b84b4b;
+
+// Large Label
+$largelabel-title: rgba(
+  $color: #ada60f,
+  $alpha: 0.4
+);
+$largelabel-value: white;
+$largelabel-background: rgba(
+  $color: #7ca363,
+  $alpha: 0.65
+);
+
+// Linear Chart
+$linearchart-background: white;

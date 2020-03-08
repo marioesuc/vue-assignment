@@ -21,6 +21,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/common/Colors";
+
 #largelabel {
   margin: 50px 20px;
 }
@@ -30,19 +32,19 @@ export default {
   align-items: center;
   width: 230px;
   height: 60px;
-  background-color: rgba($color: #7ca363, $alpha: 0.65);
+  background-color: $largelabel-background;
   border-radius: 15px;
 }
 #title {
   display: flex;
   justify-content: center;
-  color: rgba($color: #ada60f, $alpha: 0.4);
+  color: $largelabel-title;
   font-size: 30px;
   font-weight: bold;
   margin: 0 0 12px;
 }
 #currentValue {
-  color: white;
+  color: $largelabel-value;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
