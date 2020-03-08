@@ -13,7 +13,6 @@ export default {
   props: {
     title: String,
     currentValue: Number,
-    maxValue: Number,
     unit: String
   }
 };
