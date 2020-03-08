@@ -12,6 +12,7 @@
               :currentValue="data.speed"
               :maxValue="maxSpeed"
               :unit="'km/h'"
+              :threshold="maxAllowedSpeed"
             />
           </div>
           <div class="column">
@@ -65,6 +66,7 @@ const LinearChart = () =>
 
 import {
   MAX_SPEED,
+  MAX_ALLOWED_SPEED,
   MAX_CHARGE,
   MAX_VALUES_NUMBER_X,
   REFRESH_RATE_MS
@@ -84,6 +86,7 @@ export default {
   data() {
     return {
       maxSpeed: MAX_SPEED,
+      maxAllowedSpeed: MAX_ALLOWED_SPEED,
       maxCharge: MAX_CHARGE,
       titles: {
         speed: "speed",

@@ -1,6 +1,8 @@
 <template>
   <div id="circularbar">
-    <span id="currentValue">{{ `${currentValue} ${unit}` }}</span>
+    <span id="currentValue" :class="colorValue">{{
+      `${currentValue} ${unit}`
+    }}</span>
     <span id="title">{{ `${title}` }}</span>
     <VueSvgGauge
       :start-angle="-110"
@@ -31,7 +33,19 @@ export default {
     title: String,
     currentValue: Number,
     maxValue: Number,
-    unit: String
+    unit: String,
+    threshold: Number
+  },
+  computed: {
+    colorValue: function() {
+      const isThresholdExceeded =
+        this.threshold && this.currentValue > this.threshold;
+
+      return {
+        thresholdExceeded: isThresholdExceeded,
+        thresholdNotExceeded: !isThresholdExceeded
+      };
+    }
   }
 };
 </script>
@@ -47,11 +61,18 @@ export default {
 #currentValue {
   position: relative;
   top: 195px;
-  color: #7ca363;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   margin: 0 auto;
+}
+.thresholdNotExceeded {
+  color: #7ca363;
+  transition: 0.5s;
+}
+.thresholdExceeded {
+  color: #b84b4b;
+  transition: 0.5s;
 }
 #title {
   display: flex;
