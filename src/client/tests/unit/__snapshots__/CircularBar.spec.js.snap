@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CircularBar.vue renders correctly 1`] = `
+<div id="circularbar"><span id="currentValue" class="thresholdNotExceeded">15 km/h</span> <span id="title">title</span>
+  <vuesvggauge-stub value="15" min="0" max="100" startangle="-110" endangle="110" innerradius="60" separatorstep="0" separatorthickness="4" gaugecolor="[object Object],[object Object]" basecolor="#DDDDDD" easing="Circular.Out" scaleinterval="0.1" transitionduration="0"></vuesvggauge-stub>
+</div>
+`;

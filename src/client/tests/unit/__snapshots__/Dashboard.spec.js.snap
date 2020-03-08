@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard.vue renders correctly 1`] = `
+<div id="dashboard">
+  <div class="row">
+    <div class="column">
+      <div id="map">
+        <l-map-stub options="[object Object]" center="LatLng(52.093449, 5.117378)" zoom="15" crs="[object Object]" id="mapLayer">
+          <div id="mapShadow"></div>
+          <l-tile-layer-stub pane="tilePane" attribution="&amp;copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" visible="true" opacity="1" zindex="1" tilesize="256" subdomains="abc" options="[object Object]" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" tilelayerclass="function tileLayer(url, options) {
+	return new TileLayer(url, options);
+}"></l-tile-layer-stub>
+          <l-marker-stub pane="markerPane" visible="true" options="[object Object]" latlng="LatLng(52.093449, 5.117378)" icon="[object Object]"></l-marker-stub>
+        </l-map-stub>
+      </div>
+    </div>
+    <div class="column">
+      <div class="row">
+        <div class="column">
+          <div id="circularbar"><span id="currentValue" class="thresholdNotExceeded">10 km/h</span> <span id="title">speed</span>
+            <vuesvggauge-stub value="10" min="0" max="100" startangle="-110" endangle="110" innerradius="60" separatorstep="0" separatorthickness="4" gaugecolor="[object Object],[object Object]" basecolor="#DDDDDD" easing="Circular.Out" scaleinterval="0.1" transitionduration="0"></vuesvggauge-stub>
+          </div>
+        </div>
+        <div class="column">
+          <div id="circularbar"><span id="currentValue" class="thresholdNotExceeded">72.8 %</span> <span id="title">state of charge</span>
+            <vuesvggauge-stub value="72.8" min="0" max="100" startangle="-110" endangle="110" innerradius="60" separatorstep="0" separatorthickness="4" gaugecolor="[object Object],[object Object]" basecolor="#DDDDDD" easing="Circular.Out" scaleinterval="0.1" transitionduration="0"></vuesvggauge-stub>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div id="largelabel"><span id="title">energy</span>
+            <div id="labelValue"><span id="currentValue">53.2 kW</span></div>
+          </div>
+        </div>
+        <div class="column">
+          <div id="largelabel"><span id="title">odometer</span>
+            <div id="labelValue"><span id="currentValue">88526.413 km</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row"><span data="[object Object]" options="[object Object]" intervalenabled="" refreshrate="250"></span></div>
+</div>
+`;

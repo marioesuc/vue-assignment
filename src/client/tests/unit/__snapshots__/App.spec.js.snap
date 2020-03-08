@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.vue renders correctly 1`] = `
+<div id="app">
+  <div id="header"><img id="image" src="">
+    <div id="separator"></div> <span id="headerText">Dashboard</span>
+  </div>
+  <div id="dashboard">
+    <div class="row">
+      <div class="column">
+        <!---->
+      </div>
+      <div class="column">
+        <div class="row">
+          <div class="column">
+            <!---->
+          </div>
+          <div class="column">
+            <!---->
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <!---->
+          </div>
+          <div class="column">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row"><span data="[object Object]" options="[object Object]" intervalenabled="" refreshrate="250"></span></div>
+  </div>
+</div>
+`;
