@@ -23,6 +23,7 @@ export default {
   mounted() {
     this.createChart();
     if (this.intervalEnabled) {
+      // Start interval that automatically refreshes the component
       this.startInterval();
     }
   },
@@ -37,6 +38,7 @@ export default {
       }, this.refreshRate);
     },
     createChart: function() {
+      // Find the element where the chart will be living and load it
       const ctx = document.getElementById("chart");
       this.chart = new Chart(ctx, {
         type: "line",
