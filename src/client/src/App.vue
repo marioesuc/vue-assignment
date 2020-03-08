@@ -6,14 +6,17 @@
 </template>
 
 <script>
-import Dashboard from "./components/Dashboard.vue";
-import Header from "./components/Header.vue";
+// Code splitting imports to separate in chunks when bundling
+const Header = () =>
+  import(/* webpackChunkName: "header" */ "./components/Header.vue");
+const Dashboard = () =>
+  import(/* webpackChunkName: "dashboard" */ "./components/Dashboard.vue");
 
 export default {
   name: "App",
   components: {
-    Dashboard,
-    Header
+    Header,
+    Dashboard
   },
   data() {
     return {

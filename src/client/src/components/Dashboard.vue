@@ -54,10 +54,15 @@
 </template>
 
 <script>
-import Map from "./Map";
-import CircularBar from "./CircularBar";
-import LinearChart from "./LinearChart";
-import LargeLabel from "./LargeLabel";
+// Code splitting imports to separate in chunks when bundling
+const Map = () => import(/* webpackChunkName: "map" */ "./Map.vue");
+const CircularBar = () =>
+  import(/* webpackChunkName: "circular-bar" */ "./CircularBar.vue");
+const LargeLabel = () =>
+  import(/* webpackChunkName: "large-label" */ "./LargeLabel.vue");
+const LinearChart = () =>
+  import(/* webpackChunkName: "linear-chart" */ "./LinearChart.vue");
+
 import {
   MAX_SPEED,
   MAX_CHARGE,
@@ -70,8 +75,8 @@ export default {
   components: {
     Map,
     CircularBar,
-    LinearChart,
-    LargeLabel
+    LargeLabel,
+    LinearChart
   },
   props: {
     data: Object
