@@ -1,6 +1,8 @@
 # ViriCiti Dashboard
 
-![image](https://user-images.githubusercontent.com/17274178/76171361-a2a00a80-618a-11ea-9430-ce8b45346e68.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/17274178/76171390-2ce86e80-618b-11ea-881c-ebaa9c1906d7.png">
+</p>
 
 Welcome to the ViriCiti Dashboard! This is the client for the Vue assignment. The idea behind this client is building a Dashboard panel that connects to the provided WebSocket, and shows all the data related to the bus in different charts, such as: location on a map, speed and state of charge throughout time, and odometer info.
 
