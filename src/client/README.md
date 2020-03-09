@@ -13,7 +13,9 @@ Welcome to the ViriCiti Dashboard! This is the client for the Vue assignment. Th
 - Code splitting, to serve files in smaller chunks
 - Unit tests
 
-## Install dependencies
+## Project set-up
+
+### Install dependencies
 ```
 npm install
 ```
